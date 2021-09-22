@@ -37,7 +37,7 @@
 <version>1.7.31</version>
 </dependency>
 </dependencies>
-    <!-- build configuration -->
+<!-- build configuration -->
 <build>
 <plugins>
 <plugin>
