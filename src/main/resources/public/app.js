@@ -1,34 +1,44 @@
 var cadena=null;
 	function hacerGet(){
-		console.log("hola3");
-		$.get("http://localhost:4567/obtener"),function ( data ) {
-			console.log(data);
-		}
+		$(".clm_principal").remove();
+		fetch("/obtener").then(response => response.json()).then(
+			function  (data){
+				console.log(data);
+				var columnas="";
+				for(const property in data){
+					columnas=columnas+'<tr class="clm_principal">'
+					columnas=columnas+"<td>"+data[property].palabra+"</td>";
+					columnas=columnas+"<td>"+data[property].fecha+"</td>";
+					columnas=columnas+"</tr>";
+				}
+				
+				$("#tabla_fechas").append(columnas);
+		});
+		
 	}
 	function hacerPost(datos){
-		console.log("hola2");
+
 		let promise = new Promise( (resolve, reject) => {
 				var postPromise = $.ajax({
-				url: "http://localhost:4567/palabras",
+				url: "/palabras",
 				type: 'POST',
 				data: datos,
 				contentType: "application/json"
 		});
 			resolve(postPromise);
-		});
-		console.log(promise);
+		});;
 		return promise;
 	}
 	$(document).ready(function(){
+		hacerGet();
 		$("#button").click(function(){
-		fetch("http://localhost:4567/obtener").then(response => response.json()).then(
-			function  (data){
-				console.log(data);
-		});
-			//hacerGet();
+		
+			
 			console.log("hola");
 			cadena=$("#cadena").val();
 			var pro=hacerPost(cadena);
+			hacerGet();
+			
 		});
 
 	});
