@@ -29,7 +29,7 @@ public class Create {
             MongoDatabase sampleTrainingDB = mongoClient.getDatabase("arem");
 
             MongoCollection<Document> gradesCollection = sampleTrainingDB.getCollection("tablas");
-            System.out.println("11111111111111111111111111111111111111111111");
+            
 
             Document documento = new Document("_id", new ObjectId());
 

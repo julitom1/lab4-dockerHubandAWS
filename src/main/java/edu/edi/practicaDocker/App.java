@@ -27,7 +27,7 @@ public class App {
     	});
         get("hello", (req,res) -> "Hello Docker!");
         get("obtener", (req,res) -> obtenerDatos(req,res));
-        post("palabras", (req, res) -> enviarPalabra(req,res));
+        put("palabras", (req, res) -> enviarPalabra(req,res));
   }
     static ArrayList<Tabla> tabla=new ArrayList<>();
   private static String obtenerDatos(Request req, Response res) {
@@ -47,14 +47,15 @@ public class App {
 private static String enviarPalabra(Request req, Response res) {
 		Tabla t=new Tabla(req.body());
 		tabla.add(t);
-		return req.body();
+		String JSON=obtenerDatos(req,res);
+		return JSON;
 	}
 
 private static int getPort() {
       if (System.getenv("PORT") != null) {
           return Integer.parseInt(System.getenv("PORT"));
       }
-      return 4567;
+      return 4565;
   }
   
   
