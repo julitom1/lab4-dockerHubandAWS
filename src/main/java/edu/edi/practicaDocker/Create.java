@@ -24,7 +24,7 @@ public class Create {
 		return _instance;
 	}
     public static void crear() {
-        try (MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://db")) {
 
             MongoDatabase sampleTrainingDB = mongoClient.getDatabase("arem");
 
@@ -45,7 +45,7 @@ public class Create {
     }
     public static ArrayList<Tabla> leer() {
 
-        try (MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017")) {
+        try (MongoClient mongoClient = MongoClients.create("mongodb://db")) {
 
             MongoDatabase sampleTrainingDB = mongoClient.getDatabase("arem");
 

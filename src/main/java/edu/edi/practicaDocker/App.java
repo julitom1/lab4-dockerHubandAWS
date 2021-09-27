@@ -19,20 +19,20 @@ public class App {
 	static Create create;
     public static void main(String [] args){
     	create=Create.getInstance();
-    	staticFiles.location("/public");
+    	
         port(getPort());
         after((Filter) (request, response) -> {
     		response.header("Access-Control-Allow-Origin","*");
     		response.header("Access-Control-Allow-Methods","GET");
     	});
-        get("hello", (req,res) -> "Hello Docker!");
+        get("hello", (req,res) -> "Hello Dockerrr!");
         get("obtener", (req,res) -> obtenerDatos(req,res));
         put("palabras", (req, res) -> enviarPalabra(req,res));
   }
-    static ArrayList<Tabla> tabla=new ArrayList<>();
+    //static ArrayList<Tabla> tabla=new ArrayList<>();
   private static String obtenerDatos(Request req, Response res) {
 	  res.type("application/json");
-	  //ArrayList<Tabla> tabla=create.leer();
+	  ArrayList<Tabla> tabla=create.leer();
 	  ArrayList<Tabla> t=new ArrayList<Tabla>();
 	  for(int i=tabla.size()-10;i<tabla.size();i++) {
 		  if(i>=0) {
@@ -46,7 +46,8 @@ public class App {
 
 private static String enviarPalabra(Request req, Response res) {
 		Tabla t=new Tabla(req.body());
-		tabla.add(t);
+		create.crear();
+		//tabla.add(t);
 		String JSON=obtenerDatos(req,res);
 		return JSON;
 	}
