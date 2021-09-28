@@ -46,7 +46,7 @@ public class App {
 
 private static String enviarPalabra(Request req, Response res) {
 		Tabla t=new Tabla(req.body());
-		create.crear();
+		create.crear(t);
 		//tabla.add(t);
 		String JSON=obtenerDatos(req,res);
 		return JSON;

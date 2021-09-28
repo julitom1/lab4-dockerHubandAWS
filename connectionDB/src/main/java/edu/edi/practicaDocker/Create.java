@@ -23,7 +23,7 @@ public class Create {
 	public static Create getInstance() {
 		return _instance;
 	}
-    public static void crear() {
+    public static void crear(Tabla tb) {
         try (MongoClient mongoClient = MongoClients.create("mongodb://db")) {
 
             MongoDatabase sampleTrainingDB = mongoClient.getDatabase("arem");
@@ -33,10 +33,10 @@ public class Create {
 
             Document documento = new Document("_id", new ObjectId());
 
-            Tabla tabla=new Tabla("palabra");
-            documento.append("palabra",tabla.getPalabra() )
+        
+            documento.append("palabra",tb.getPalabra() )
 
-                   .append("fecha", tabla.getFecha());
+                   .append("fecha", tb.getFecha());
 
             gradesCollection.insertOne(documento);
 
