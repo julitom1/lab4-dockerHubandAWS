@@ -6,19 +6,14 @@ import static spark.Spark.*;
 
 import java.util.ArrayList;
 
-import org.bson.Document;
-
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-
 import spark.Response;
 
 
 public class App {
 
-	static Create create;
+	static ConnectionDataBase create;
     public static void main(String [] args){
-    	create=Create.getInstance();
+    	create=ConnectionDataBase.getInstance();
     	
         port(getPort());
         after((Filter) (request, response) -> {

@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import org.bson.Document;
 
 import org.bson.types.ObjectId;
-public class Create {
+public class ConnectionDataBase {
 
-	public static final Create _instance=new Create();
+	public static final ConnectionDataBase _instance=new ConnectionDataBase();
 
-	public static Create getInstance() {
+	public static ConnectionDataBase getInstance() {
 		return _instance;
 	}
     public static void crear(Tabla tb) {
