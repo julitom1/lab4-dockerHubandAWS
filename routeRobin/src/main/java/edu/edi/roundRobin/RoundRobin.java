@@ -14,9 +14,9 @@ public class RoundRobin {
     // 1. Definir mapa, key-ip, value-weight
    static Map<String,Integer> ipMap=new HashMap<>();
    static {
-       ipMap.put("http://localhost:4567",1);
-       ipMap.put("http://localhost:4566",1);
-       ipMap.put("http://localhost:4565",1);
+       ipMap.put("http://ec2-54-161-208-207.compute-1.amazonaws.com:42000",1);
+       ipMap.put("http://ec2-54-161-208-207.compute-1.amazonaws.com:42001",1);
+       ipMap.put("http://ec2-54-161-208-207.compute-1.amazonaws.com:42002",1);
 
    }
 
