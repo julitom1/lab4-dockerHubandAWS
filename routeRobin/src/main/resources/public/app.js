@@ -1,6 +1,6 @@
 var cadena=null;
 	function hacerGet(){
-		$(".clm_principal").remove();
+		
 		fetch("/obtener").then(response => response.json()).then(
 			function  (data){
 				callback(data);
@@ -32,10 +32,10 @@ var cadena=null;
 		return promise;
 	}
 	$(document).ready(function(){
+                $(".clm_principal").remove();
 		hacerGet();
 		$("#button").click(function(){
-		
-			
+		       $(".clm_principal").remove();	
 			console.log("hola");
 			cadena=$("#cadena").val();
 			hacerPost(cadena).then(function (data){
