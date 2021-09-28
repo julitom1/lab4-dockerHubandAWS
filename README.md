@@ -55,28 +55,30 @@ Para finalizar desde AWS se abrieron los puertos para que cualquiera pueda entra
 ![](imagenes/Captura7.PNG)
 
 
-### Contenedores ejecutandose
+#### Contenedores ejecutandose
 
 ![](imagenes/Captura8.PNG)
 
 
-### probando puerto 45000 obtener Datos
+#### probando puerto 45000 obtener Datos
 
 ![](imagenes/Captura12.PNG)
 
-### probando puerto 45000 enviar Datos
+#### probando puerto 45000 enviar Datos
 
 ![](imagenes/Captura13.PNG)
 
-### probando puerto 45000 frontend
+#### probando puerto 45000 frontend
 
-![](imagenes/Captura11.jpeg)
+![](imagenes/Captura11.PNG)
 
 ## Diagrama de despliegue
 
 ![](imagenes/Captura12.jpeg)
 
+## Autor
 
+Yarit Yajanny Villalobos Jimenez
 
 
 
