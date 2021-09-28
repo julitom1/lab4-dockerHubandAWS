@@ -29,7 +29,7 @@ public class App {
 	  res.type("application/json");
 	  ArrayList<Tabla> tabla=create.leer();
 	  ArrayList<Tabla> t=new ArrayList<Tabla>();
-	  for(int i=tabla.size()-1;i<tabla.size()-11;i--) {
+	  for(int i=tabla.size()-1;i>=tabla.size()-10;i--) {
 		  if(i>=0) {
 			  t.add(tabla.get(i));
 		  }
