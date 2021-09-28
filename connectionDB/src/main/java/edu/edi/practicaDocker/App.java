@@ -29,9 +29,9 @@ public class App {
 	  res.type("application/json");
 	  ArrayList<Tabla> tabla=create.leer();
 	  ArrayList<Tabla> t=new ArrayList<Tabla>();
-	  for(int i=tabla.size()-10;i<tabla.size();i++) {
+	  for(int i=tabla.size()-1;i<tabla.size()-11;i--) {
 		  if(i>=0) {
-			  t.add(0, tabla.get(i));
+			  t.add(tabla.get(i));
 		  }
 	  }
 	  Gson gson=new Gson();
