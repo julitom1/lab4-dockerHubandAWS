@@ -31,7 +31,7 @@ public class App {
 	  ArrayList<Tabla> t=new ArrayList<Tabla>();
 	  for(int i=tabla.size()-10;i<tabla.size();i++) {
 		  if(i>=0) {
-			  t.add(tabla.get(i));
+			  t.add(0, tabla.get(i));
 		  }
 	  }
 	  Gson gson=new Gson();
