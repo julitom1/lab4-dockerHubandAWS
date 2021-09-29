@@ -42,7 +42,6 @@ public class App {
 private static String enviarPalabra(Request req, Response res) {
 		Tabla t=new Tabla(req.body());
 		create.crear(t);
-		//tabla.add(t);
 		String JSON=obtenerDatos(req,res);
 		return JSON;
 	}
@@ -51,7 +50,7 @@ private static int getPort() {
       if (System.getenv("PORT") != null) {
           return Integer.parseInt(System.getenv("PORT"));
       }
-      return 4565;
+      return 4002;
   }
   
   

@@ -31,11 +31,11 @@ public class App {
   }
     
   private static String obtenerDatos(Request req, Response res) {
-	  String urlService=wr.getRoundRobin();
-	  System.out.println(urlService);
+	  
+	  
 	  String resultado="";
 	  try {
-		  resultado=conection.getData(urlService+"/obtener");
+		  resultado=conection.getData(obtenerHostNew(req)+"/obtener");
 	  } catch (IOException e) {
 		e.printStackTrace();
 	  }
@@ -45,12 +45,10 @@ public class App {
 	}
 
 private static String enviarPalabra(Request req, Response res) {
-		String urlService=wr.getRoundRobin();
-		System.out.println(urlService);
-		String resultado="";
-		  try {
-			  resultado=conection.putData(urlService+"/palabras",req.body());
-		  } catch (IOException e) {
+	String resultado="";	
+	try {
+		resultado=conection.putData(obtenerHostNew(req)+"/palabras",req.body());
+		  } catch (Exception e) {
 			e.printStackTrace();
 		  }
 		  res.type("application/json");
@@ -61,9 +59,12 @@ private static int getPort() {
       if (System.getenv("PORT") != null) {
           return Integer.parseInt(System.getenv("PORT"));
       }
-      return 4568;
+      return 4500;
       
   }
   
-  
+	private static String obtenerHostNew(Request req) {
+		String[] url=req.url().split(":");
+		return url[0]+":"+url[1]+wr.getRoundRobin();
+	}
 }
