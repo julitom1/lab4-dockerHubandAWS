@@ -28,6 +28,10 @@ Este microservicio contiene 3 clases App, HttpConnection, RoundRobin
 * HttpConnection: Es la encargada de hacer las peticiones al micro-servicio connectionDB con la url que le hayan pasado.
 * RoundRobin: Es la encargada de realizar la distribución de carga, por tanto aqui estan las diferentes urls que contienen a connectionDB y él elige la url que atendera la petición, en este caso se realizo un RoundRobin, que basicamente sigue el orden de una lista y cuando llegue al último de la lista vuelve a comenzar. En este caso connectionDB, estaba ejecutandose en el puerto 42000,42001,42002. por tanto, la primera petición se hizo por el puerto 42000, la segunda petición por la petición 42001, la tercera peticion por el purto 42002 y luego vuelve a empezar.
 
+**Nota:** No aparece la url completa porque la url cambia según la máquina que me asigne AWS, pero como correran los servidores por la misma url pero en diferentes puertos, lo que hice fue reutilizar la url con req.url() y le cambie simplemente el puerto, además asi funciona para cualquier máquina que tenga Docker y Docker-Compose lo unico que tendría que hacer es descargar el docker-compose.yml y ejecutar el comando "docker-compose up -d". 
+
+![](imagenes/Captura14.PNG)
+
 ![](imagenes/Captura2.PNG)
 
 ![](imagenes/Captura3.jpeg)
