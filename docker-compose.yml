@@ -7,17 +7,17 @@ services:
         container_name: web
         ports:
             - "42000:6000"
-     web2:
+    web2:
         image: julitom1/connectiondb
         container_name: web2
         ports:
             - "42001:6000"
-     web3:
+    web3:
         image: julitom1/connectiondb
         container_name: web3
         ports:
             - "42002:6000"
-     web4:
+    web4:
         image: julitom1/roundrobin
         container_name: web4
         ports:
